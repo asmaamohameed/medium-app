@@ -6,10 +6,11 @@ use App\Models\Article;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Broadcasting\PrivateChannel;
+use Illuminate\Contracts\Events\ShouldHandleEventsAfterCommit;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
-class ArticlePublished
+class ArticlePublished implements ShouldHandleEventsAfterCommit
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
